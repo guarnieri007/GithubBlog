@@ -3,17 +3,25 @@ import styled from "styled-components";
 export const ProfileStyle = styled.div`
 padding: 32px;
 width: 100%;
+overflow: auto;
 
 display: flex;
 flex-direction: row;
+align-content: center;
+@media (max-width: 768px) {
+    align-items: center;
+    gap: 24px;
+    flex-direction: column;
+}
 `;
 
 export const ProfileData = styled.div`
+
 display: flex;
 flex-direction: column;
-flex-grow: 1;
 height: auto;
 padding-left: 32px;
+gap: 14px;
 
 div:first-child {
     width: 100%;
@@ -40,4 +48,21 @@ div:nth-child(3){
     flex-direction: row;
     width:100%;
 }
-`
+
+@media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+    padding-left: 16px;
+    width: 100%;
+    flex-wrap: wrap;
+    div:nth-child(3) {
+        align-items: center;
+        flex-wrap: wrap;
+        div {
+            margin: 0 auto;
+        }
+
+    }
+}
+
+`;
