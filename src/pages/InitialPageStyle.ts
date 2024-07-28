@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const AppContainer = styled.div`
+export const InitialPageStyle = styled.div`
 width: 100%;
 min-height: 100vh;
 height: auto;

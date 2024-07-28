@@ -1,0 +1,33 @@
+.searchBarContainer {
+    width: calc(100% - 16rem);
+    max-width: 865px;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.searchBarContainer div {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 12px;
+}
+
+.searchBarContainer div h2 {
+    flex-grow: 1;
+}
+
+.searchInput {
+    border: 1px solid var(--base-label);
+    color: var(--base-label);
+    width: 100%;
+    font-size: 16px;
+    line-height: 160%;
+    background-color: inherit;
+    border-radius: 6px;
+    padding: 12px 16px;
+}
+
+.searchInput:active, .searchInput:focus {
+    border: 1px solid var(--blue);
+    color: var(--base-text);
+}
