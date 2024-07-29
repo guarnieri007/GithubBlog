@@ -15,6 +15,13 @@ line-height: 160%;
 color: ${prop => prop.theme["base-subtitle"]};
 `;
 
+export const TitleMiddle = styled.h2`
+font-size: 20px;
+font-weight: bold;
+line-height: 160%;
+color: ${prop => prop.theme["base-title"]};
+`;
+
 export const TextSmall = styled.span`
 font-size: 14px;
 font-weight: bold;
@@ -29,6 +36,7 @@ font-weight: bold;
 line-height: 160%;
 padding-right: 13px;
 position: relative;
+height: min-content;
 
 &::before {
     position: absolute;
@@ -48,7 +56,7 @@ position: relative;
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 10px; /* Ajuste a altura conforme necessário */
+    bottom: 0px; /* Ajuste a altura conforme necessário */
     height: 1px;
     background-color: ${(props) => props.theme.blue};
     width: calc(100% + 10px);

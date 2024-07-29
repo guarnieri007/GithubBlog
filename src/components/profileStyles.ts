@@ -39,7 +39,13 @@ div:nth-child(2) {
     p{
         font-size: 16px;
         line-height: 160%;
-        color: ${prop => prop.theme["base-text"]}
+        color: ${prop => prop.theme["base-text"]};
+
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Número de linhas a serem exibidas */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
 
@@ -63,6 +69,14 @@ div:nth-child(3){
         }
 
     }
+
+    div:nth-child(2) {
+
+    p{
+        -webkit-line-clamp: 4; /* Número de linhas a serem exibidas */
+    }
+}
+    
 }
 
 `;
