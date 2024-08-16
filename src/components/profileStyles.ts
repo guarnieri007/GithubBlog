@@ -22,6 +22,7 @@ flex-direction: column;
 height: auto;
 padding-left: 32px;
 gap: 14px;
+width: 100%;
 
 div:first-child {
     width: 100%;

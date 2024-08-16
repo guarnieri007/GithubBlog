@@ -4,38 +4,47 @@ import GitHubIcon from "../assets/github-brands.svg";
 import CompanyIcon from "../assets/building-solid.svg";
 import FollowersIcon from "../assets/user-group-solid.svg";
 import style from "../styles/ProfileMaindiv.module.scss";
+import { useContext } from "react";
+import { AppContext } from "../context/github";
 
 
 export function Profile() {
+    const { userData } = useContext(AppContext)!;
+
+    if (!userData) {
+        return <div>Loading...</div>;
+    }
     return (
         <ProfileStyle>
-            <img className={style.profileImage} src="https://github.com/guarnieri007.png" />
+            <img className={style.profileImage} src={userData.avatar_url} />
             <ProfileData>
                 <div>
                     <TitleLarge>
-                        Felipe Guarnieri
+                        {userData.name}
                     </TitleLarge>
-                    <Link href="#">Github</Link>
+                    <Link href={userData.html_url}>Github</Link>
                 </div>
                 <div>
                     <p>
-                        Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat pulvinar vel mass.
+                        {userData.bio}
                     </p>
                 </div>
                 <div>
                     <div className={style.buttonIcon}>
                         <img src={GitHubIcon} />
-                        <span>guarnieri007</span>
+                        <span>{userData.login}</span>
                     </div>
 
-                    <div className={style.buttonIcon}>
-                        <img src={CompanyIcon} />
-                        <span>AiMedica</span>
-                    </div>
+                    {userData.company && (
+                        <div className={style.buttonIcon}>
+                            <img src={CompanyIcon} />
+                            <span>{userData.company}</span>
+                        </div>
+                    )}
 
                     <div className={style.buttonIcon}>
                         <img src={FollowersIcon} />
-                        <span>0 seguidores</span>
+                        <span>{userData.followers} seguidores</span>
                     </div>
                 </div>
             </ProfileData>
