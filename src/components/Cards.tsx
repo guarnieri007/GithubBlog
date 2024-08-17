@@ -11,8 +11,9 @@ export function CardsContainer() {
         <nav className={Styles.cardContainer}>
             {issues?.items && issues.items.length > 0 ? (
                 issues.items.map((issue, index) => {
+                console.log(`issue ${index}:`, issue);
                     return (
-                        <NavLink key={index} to="/post" className={Styles.card}>
+                        <NavLink key={index} to={`/post/${issue.id}`} className={Styles.card}>
                             <div>
                                 <TitleMiddle>
                                     {issue.title}

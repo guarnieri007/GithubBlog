@@ -30,3 +30,51 @@
     }
 
 }
+
+.customHeading {
+    font-size: 20px;
+    padding: 8px 0px;
+    color: #3294f8;
+}
+
+.customBold {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 160%;
+}
+
+.customLink {
+    color: #3294f8;
+    font-size: 16px;
+    line-height: 160%;
+    text-decoration: underline;
+}
+
+.customQuote {
+    font-size: 16px;
+    line-height: 100%;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 8px;
+    border-left: solid 4px #30363d;
+    text-indent: 8px;
+}
+
+.customLi {
+    font-size: 16px;
+    color: #afc2d4;
+    line-height: 160%;
+}
+
+.customCode {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    color: #afc2d4;
+    line-height: 160%;
+    background-color: #30363d;
+    padding: 8px;
+    border: 2px solid #3294f8;
+    border-radius: 8px;
+}

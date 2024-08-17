@@ -10,7 +10,7 @@ export function SearchBar() {
         <div className={styles.searchBarContainer}>
             <div>
                 <TitleSmall>Publicações</TitleSmall>
-                <TextSmall>{issues?.total_count} publicações</TextSmall>
+                <TextSmall>{issues?.total_count != null ? issues.total_count : 0} publicações</TextSmall>
             </div>
             <input  className={styles.searchInput} type="text" name="" id="" placeholder="Buscar conteúdo" />
         </div>

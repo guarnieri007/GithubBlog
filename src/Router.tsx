@@ -11,7 +11,7 @@ export function Router() {
             <Routes>
                 <Route path="/" element={<DefaultLayout />}>
                     <Route path="/" element={<InitialPage />} />
-                    <Route path="/post" element={<Post />} />
+                    <Route path="/post/:id" element={<Post />} />
                 </Route>
             </Routes>
         </AppProvider>
