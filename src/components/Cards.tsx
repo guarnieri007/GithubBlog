@@ -3,15 +3,23 @@ import Styles from "../styles/Cards.module.scss";
 import { TitleMiddle } from "./commom/generalItems";
 import { useContext } from "react";
 import { AppContext } from "../context/github";
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { customRenderers } from "./customRenderers";
 
 export function CardsContainer() {
-    const { issues } = useContext(AppContext)!;
+    const { issues, searchList } = useContext(AppContext)!;
+    const list = searchList?.incomplete_results
+        ? searchList.items
+        : issues?.items && issues.items.length > 0
+        ? issues.items
+        : [];
 
     return (
         <nav className={Styles.cardContainer}>
-            {issues?.items && issues.items.length > 0 ? (
-                issues.items.map((issue, index) => {
-                console.log(`issue ${index}:`, issue);
+            { list.length > 0 ? (
+                list.map((issue, index) => {
+                    console.log(`issue ${index}:`, issue);
                     return (
                         <NavLink key={index} to={`/post/${issue.id}`} className={Styles.card}>
                             <div>
@@ -23,7 +31,11 @@ export function CardsContainer() {
                                 </span>
                             </div>
                             <p>
-                                {issue.body}
+                                <ReactMarkdown
+                                    children={issue.body}
+                                    remarkPlugins={[remarkGfm]}
+                                    components={customRenderers}
+                                />
                             </p>
                         </NavLink>
                     );

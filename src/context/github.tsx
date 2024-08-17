@@ -8,6 +8,8 @@ interface AppProviderProps {
 interface AppContextType {
     userData: UserDataResponse | null;
     issues: GitHubIssueResponse | null;
+    searchList: GitHubIssueResponse | null;
+    setSearchList: React.Dispatch<React.SetStateAction<GitHubIssueResponse | null>>;
     setIssues: React.Dispatch<React.SetStateAction<GitHubIssueResponse | null>>;
     setUserData: React.Dispatch<React.SetStateAction<UserDataResponse | null>>;
 }
@@ -19,6 +21,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
     const repoName = "GithubBlog"
     const [userData, setUserData] = useState<UserDataResponse | null>(null);
     const [issues, setIssues] = useState<GitHubIssueResponse | null>(null);
+    const [searchList, setSearchList] = useState<GitHubIssueResponse | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -47,6 +50,8 @@ export const AppProvider = ({ children }: AppProviderProps) => {
             value={{
                 userData,
                 issues,
+                searchList,
+                setSearchList,
                 setUserData,
                 setIssues
             }}
