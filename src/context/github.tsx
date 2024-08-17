@@ -36,7 +36,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
         const fetchData = async () => {
             const data = await searchGitHubIssues({
                 text:"",
-                username: userName,
+                username: "guarnieri007",
                 repo: repoName
              });
             setIssues(data);
