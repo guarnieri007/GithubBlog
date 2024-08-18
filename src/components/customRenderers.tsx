@@ -36,7 +36,7 @@ export const customRenderers = {
     ),
     a: ({ href, children }: { href?: string; children: React.ReactNode }) => (
         href ? (
-          <a href={href} className={style.customLink}>
+          <a href={href} target='_blank' className={style.customLink}>
             {children}
           </a>
         ) : (

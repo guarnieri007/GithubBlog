@@ -18,7 +18,7 @@ export function PostHeader({ issue }: PostHeaderProps) {
         <div className={style.postMainContainer}>
             <div>
                 <BackLink href="/">voltar</BackLink>
-                <Link href={issue.html_url}>Ver no Github</Link>
+                <Link href={issue.html_url} target="_blank">Ver no Github</Link>
             </div>
             <TitleLarge>{issue.title}</TitleLarge>
             <div className={style.iconsButtons}>

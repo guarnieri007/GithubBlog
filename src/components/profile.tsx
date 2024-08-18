@@ -22,7 +22,7 @@ export function Profile() {
                     <TitleLarge>
                         {userData.name}
                     </TitleLarge>
-                    <Link href={userData.html_url}>Github</Link>
+                    <Link href={userData.html_url} target="_blank">Github</Link>
                 </div>
                 <div>
                     <p>
