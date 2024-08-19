@@ -17,15 +17,16 @@ interface AppContextType {
 export const AppContext = createContext<AppContextType | null>(null);
 
 export const AppProvider = ({ children }: AppProviderProps) => {
-    const userName = "guarnieri007";
-    const repoName = "GithubBlog"
+    const repoName = "GithubBlog";
     const [userData, setUserData] = useState<UserDataResponse | null>(null);
     const [issues, setIssues] = useState<GitHubIssueResponse | null>(null);
     const [searchList, setSearchList] = useState<GitHubIssueResponse | null>(null);
-
+    
     useEffect(() => {
+        const peoleIKnow = ["yes-pripri", "victored", "josebeli", "romerocm", "guarnieri007", "kperveen", "jritch33"];
+        const userSelected = peoleIKnow[Math.floor(Math.random() * peoleIKnow.length)];
         const fetchData = async () => {
-            const data = await getUserData({ username: userName });
+            const data = await getUserData({ username: userSelected });
             setUserData(data);
         };
 
@@ -35,10 +36,10 @@ export const AppProvider = ({ children }: AppProviderProps) => {
     useEffect(() => {
         const fetchData = async () => {
             const data = await searchGitHubIssues({
-                text:"",
+                text: "",
                 username: "guarnieri007",
                 repo: repoName
-             });
+            });
             setIssues(data);
         };
 
